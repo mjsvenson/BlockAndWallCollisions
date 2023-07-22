@@ -40,9 +40,9 @@ clock = pg.time.Clock()
 font = pg.font.Font(None, 32)
 
 #Creating images
-groundimage = pg.image.load('graphics/ground.png').convert()
-boximage = pg.image.load('graphics/box.png').convert()
-wallimage = pg.image.load('graphics/wall.png').convert()
+groundimage = pg.image.load('ground.png').convert()
+boximage = pg.image.load('box.png').convert()
+wallimage = pg.image.load('wall.png').convert()
 
 text_surface = font.render('Collisions: ', True, 'White')
 

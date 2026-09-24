@@ -1,20 +1,36 @@
-Matthew Svenson 2023
+# Block and Wall Collisions
 
-What is this software?
+A Python/pygame physics simulation of two blocks colliding with each other and a wall — with a surprising appearance of the digits of π.
 
-    This software simulates the collision of two blocks in addition to a wall with infinite mass and zero velocity with user inputted
-    mass as well as user inputted velocity for the two blocks. This project was made to simulate the strange coincidence of pi showing
-    up in block collisions when the first block is static with a mass of 1kg and the second block at any velocity and with a mass of
-    any number that is a power of 100 (100^n: 1, 100, 10000, etc.). This program can also be used to simulate any combination of 
-    mass and velocity for the two blocks as well as counting the number of collisions that are present during the simulation
+![Block and Wall Collisions simulation](BlockAndWallCollisions.jpg)
 
-How do I run this?
+## What it does
 
-    This code was primarily run through VSCode's python extension during development, but can be ran through most python interpreters.
-    This software does require that pygame is to be installed on the device.
+This program simulates two blocks on a frictionless surface next to a wall of infinite mass and zero velocity. You input the mass and velocity of each block, and the simulation plays out every elastic collision, counting them as they happen.
 
-Bugs?
+The fun part: when the first block starts at rest with a mass of 1 kg and the second block has a mass of 100^n kg (1, 100, 10000, …), the total collision count spells out the digits of pi — 3, 31, 314, 3141, …
 
-    This simulation contains several bugs when being brought to a large scale. Any mass that is over 10,000 is inconsistent and usually
-    incorrect. To figure out a solution, collision tolerance was tested but was sadly unsuccessful. Due to the simulations dependence on
-    the GUI, some arguments are impossible to execute.
+## How to run it
+
+Requires Python 3 and pygame.
+
+```bash
+pip install -r requirements.txt
+python main.py
+```
+
+Enter the mass and velocity for each block when prompted, then watch the collisions — and the counter — play out.
+
+## How it works
+
+- Elastic-collision physics between the two blocks and the wall
+- Real-time collision counter
+- Adjustable masses and velocities, so any configuration can be explored — not just the pi-digit cases
+
+## Known limitations
+
+At large scales (masses above ~10,000) the simulation becomes inconsistent and the collision counts are usually incorrect — collision-tolerance tweaks were tried but didn't resolve it. Because the simulation is GUI-driven, some argument combinations are impossible to execute. Fixing the numerical stability at scale would be the natural next step.
+
+## License
+
+Released into the public domain under the Unlicense — see [LICENSE](LICENSE).
